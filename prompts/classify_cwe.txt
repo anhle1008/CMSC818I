@@ -1,0 +1,11 @@
+Classify the vulnerability CWE for the code. If none, return null.
+
+STRICT JSON ONLY:
+{
+  "predicted_cwe": "CWE-XXX" or null,
+  "reason": "one concise sentence"
+}
+
+<code>
+{{CODE}}
+</code>

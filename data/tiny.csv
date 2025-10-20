@@ -1,0 +1,26 @@
+id,lang,code,label,cwe_id,note
+ex001,c,char buf[8]; gets(buf);,vulnerable,CWE-120,classic buffer overflow
+ex002,c,"char buf[8]; fgets(buf,8,stdin);",clean,,
+ex003,c,"sprintf(buf, ""%s"", userInput);",vulnerable,CWE-120,unsafe sprintf usage
+ex004,python,os.system('ls ' + user_input),vulnerable,CWE-78,command injection
+ex005,python,"subprocess.run(['ls', user_input])",clean,,
+ex006,java,stmt.execute('SELECT * FROM users WHERE id=' + userId);,vulnerable,CWE-89,SQL injection
+ex007,java,"PreparedStatement ps = conn.prepareStatement('SELECT * FROM users WHERE id=?'); ps.setInt(1, userId);",clean,,
+ex008,html,"<div>Welcome "" + userInput + ""</div>",vulnerable,CWE-79,XSS via HTML injection
+ex009,html,<div>Welcome {{ safeUser }}</div>,clean,,
+ex010,c,int a[10]; for(int i=0;i<=10;i++){a[i]=i;},vulnerable,CWE-119,off-by-one overflow
+ex011,c,int a[10]; for(int i=0;i<10;i++){a[i]=i;},clean,,
+ex012,python,pickle.loads(data),vulnerable,CWE-502,unsafe deserialization
+ex013,python,"pickle.loads(data, fix_imports=True)",vulnerable,CWE-502,still unsafe deserialization
+ex014,python,json.loads(data),clean,,
+ex015,java,Runtime.getRuntime().exec(userInput);,vulnerable,CWE-78,command injection
+ex016,java,ProcessBuilder pb = new ProcessBuilder('ls'); pb.start();,clean,,
+ex017,c,"strcpy(buf, argv[1]);",vulnerable,CWE-120,unsafe strcpy
+ex018,c,"strncpy(buf, argv[1], sizeof(buf)-1);",clean,,
+ex019,python,cursor.execute(f'SELECT * FROM products WHERE name={name}'),vulnerable,CWE-89,SQL injection f-string
+ex020,python,"cursor.execute('SELECT * FROM products WHERE name=%s', (name,))",clean,,
+ex021,php,$query = 'SELECT * FROM users WHERE id=' . $_GET['id']; mysql_query($query);,vulnerable,CWE-89,PHP SQLi
+ex022,php,$stmt = $pdo->prepare('SELECT * FROM users WHERE id=?'); $stmt->execute([$id]);,clean,,
+ex023,csharp,var query = 'SELECT * FROM users WHERE name=' + name;,vulnerable,CWE-89,string concat SQL
+ex024,csharp,"var cmd = new SqlCommand('SELECT * FROM users WHERE name=@name'); cmd.Parameters.AddWithValue('@name', name);",clean,,
+ex025,python,eval(user_input),vulnerable,CWE-94,code injection via eval

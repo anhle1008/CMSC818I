@@ -3,10 +3,11 @@ import json
 import time
 import argparse
 import re
+from dotenv import load_dotenv; load_dotenv()  # loads .env automatically
 from pathlib import Path
 from typing import Dict, Any
 from datetime import datetime
-from openai import OpenAI  # make sure openai is installed
+from openai import OpenAI 
 
 # ---------------------------------------------------------------------
 # Helper functions

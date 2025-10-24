@@ -1,0 +1,13 @@
+Act as a strict verifier. Given the code and the generator's JSON, return JSON ONLY:
+{
+  "judge_verdict": "confirm" | "flip",
+  "vulnerable": true|false,
+  "predicted_cwe": "CWE-XXX" or null
+}
+Code:
+<code>
+{{CODE}}
+</code>
+Generator JSON:
+{{GEN_JSON}}
+Rules: If generator missed sanitization or mis-classified CWE, flip. No rationale.

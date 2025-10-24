@@ -1,0 +1,12 @@
+You are a security reviewer. Fill this JSON ONLY:
+{
+  "has_user_input": true|false,
+  "has_sanitization": true|false,
+  "has_dangerous_sink": true|false,
+  "taint_possible": true|false,
+  "predicted_cwe": "CWE-XXX" or null,
+  "vulnerable": true|false
+}
+<code>
+{{CODE}}
+</code>

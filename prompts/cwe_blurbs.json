@@ -1,0 +1,6 @@
+{
+  "CWE-78": "User input must not be concatenated into shell commands; use arg lists.",
+  "CWE-89": "Avoid string concatenation in SQL; use parameterized queries.",
+  "CWE-120": "Unbounded copy to fixed-size buffers causes overflow; use length-checked APIs.",
+  "CWE-502": "Do not deserialize untrusted data; prefer safe formats."
+}
